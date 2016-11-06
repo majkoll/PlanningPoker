@@ -1,8 +1,3 @@
-.RevealPhase {
-	overflow-y: scroll;
-	-webkit-overflow-scrolling: touch;
-}
-
 .RevealPhase ul {
 	list-style: none;
 	margin: 0;
