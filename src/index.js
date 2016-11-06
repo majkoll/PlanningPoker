@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import PlanningPokerApplication from './components/PlanningPokerApplication'
+import PlanningDeck from './components/PlanningDeck'
 
 import './cssReset.css'
 import './index.css'
@@ -41,6 +41,6 @@ const deck = {
 }
 
 ReactDOM.render(
-  <PlanningPokerApplication state={state} deck={deck} />,
-  document.getElementById('root')
+  <PlanningDeck state={state} deck={deck} />,
+  document.getElementById('planningDeck')
 );

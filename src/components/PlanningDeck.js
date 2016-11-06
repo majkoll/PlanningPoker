@@ -5,7 +5,7 @@ import Card from './card/Card'
 import WaitingPhase from './waiting/WaitingPhase'
 import RevealPhase from './reveal/Reveal'
 
-import './PlanningPokerApplication.css'
+import './PlanningDeck.css'
 
 class PlanningPokerApplication extends Component {
 	

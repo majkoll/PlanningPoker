@@ -1,3 +1,17 @@
+# Planning Poker Application "planningDeck"
+
+Run the app locally
+```sh
+$ git clone https://github.com/majkoll/PlanningPoker
+$ cd PlanningPoker
+$ npm install
+$ npm start
+```
+Use Node >= 4.4.7 on your machine. You can use nvm to switch Node version between different project.
+
+# About the app
+A simple planning poker game between the user and some fictional team members. The application has 3 steps: 1) Select phase: you select the card of your choice and moves on to the next phase. 2) Waiting phase: wait for the fictional team mebmers to pick their card. 3) Reveal phase: show everybody card at the same time.
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
