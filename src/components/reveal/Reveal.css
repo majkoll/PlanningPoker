@@ -1,0 +1,15 @@
+.RevealPhase ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.RevealPhase .playersCard {
+	width: 7em;
+	padding: .4em;
+	text-align: center;
+}

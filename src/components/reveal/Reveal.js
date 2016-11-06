@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Card from '../card/Card'
 
+import './Reveal.css'
+
 class Reveal extends Component {
 	
 	restartApp = () => {
@@ -8,23 +10,22 @@ class Reveal extends Component {
 	}
 	
 	flipCard = () => {
-		console.log('flip the card')
+		
 	}
 	
 	render() {
 		
 		let teamMemberCard = this.props.team.map((t, index) => {
-			return <Card card={t.selectedCard} onClick={this.flipCard} key={t.id} />
+			return <Card player={t.nickname} card={t.selectedCard} onClick={this.flipCard} key={t.id} />
 		}) 
 		
 		return (
-			<div>
-				<b>Now all players will reveal their cards</b>
+			<div className="RevealPhase">
 				<ul>
-					<Card card={this.props.userCard} onClick={this.flipCard} />
+					<Card player="User" card={this.props.userCard} onClick={this.flipCard} />
 					{teamMemberCard}
 				</ul>
-				<button onClick={this.restartApp}>Restart</button>
+				<button className="phaseChangeButton" onClick={this.restartApp}>Restart</button>
 			</div>
 		)	
 	}

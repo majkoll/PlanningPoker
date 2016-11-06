@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Player from '../player/Player'
 import update from 'react-addons-update'
 
+import './WaitingPhase.css'
+
 class WaitingPhase extends Component {
 
 	componentDidMount() {
@@ -51,9 +53,13 @@ class WaitingPhase extends Component {
 			return <Player key={index} player={player} />
 		})
 		return (
-			<div>
-				<h1>Waiting for your team members</h1>
-				{players}
+			<div className="WaitingPhase">
+				<header>
+					<h1>Waiting for your team members</h1>
+				</header>
+				<div className="players">
+					{players}
+				</div>
 			</div>
 		)
 	}

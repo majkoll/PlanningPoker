@@ -16,10 +16,6 @@
 }
 
 .PlanningPokerApplication > div {
-	margin-top: 70px;
-}
-
-.PlanningPokerApplication .selectionPhase {
 	margin-top: 50px;
 }
 
@@ -64,7 +60,37 @@
 	margin-top: 4em;
 }
 
+.PlanningPokerApplication .phaseChangeButton {
+	width: 20em;
+	margin: 2% auto 2% auto;
+	border: none;
+	outline: none;
+	padding: 2em;
+	display: block;
+	cursor: pointer;
+	background: #2e3b3e url(./card/card-texture.png);
+	color: #f5f3f0;
+	position: relative;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .4);
+	border-radius: 4px;
+}
 
+.PlanningPokerApplication .phaseChangeButton::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, .6);
+	opacity: 0;
+	transition: opacity .3s ease-in-out;
+	border-radius: 4px;
+}
+
+.PlanningPokerApplication .phaseChangeButton:hover::after {
+	opacity: 1;
+}
 
 
 

@@ -22,13 +22,13 @@ const state = {
 		{
 			id: 102,
 			nickname: 'Mr Green',
-			role: 'Team Leader',
+			role: 'Backend developer',
 			selectedCard: null
 		},
 		{
 			id: 103,
 			nickname: 'Mr Yellow',
-			role: 'Team Leader',
+			role: 'Product owner',
 			selectedCard: null
 		},
 	],

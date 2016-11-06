@@ -1,0 +1,24 @@
+.WaitingPhase {
+	width: 100%;
+	background: #2d2d2d;
+	color: #eaeaea;
+	height: 25em;
+	background: #2e3b3e url(../grunge-background.png) 0 0 repeat;
+}
+
+.WaitingPhase header {
+	text-align: center;
+	text-transform: uppercase;
+	padding: 2em 0;
+}
+
+.WaitingPhase .players {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.WaitingPhase .players .player {
+	margin: 0 2em;
+	text-align: center;
+}

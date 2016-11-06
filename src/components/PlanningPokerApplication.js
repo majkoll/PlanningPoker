@@ -119,11 +119,10 @@ class PlanningPokerApplication extends Component {
 					<div>
 						<WaitingPhase deck={this.props.deck} players={this.state.teamMembers} updatePlayerState={this.updateSelectedCardForTeamMembers} />
 						{this.state.teamMembersReady && 
-							<button onClick={this.goToRevealPhase}>Reveal all cards!</button>
+							<button className="phaseChangeButton" onClick={this.goToRevealPhase}>Reveal cards</button>
 						}
 					</div>	
 				}
-				
 				{this.state.phase === 'reveal' && 
 					<RevealPhase userCard={this.state.selectedCard} team={this.state.teamMembers} restart={this.restartApplication} />
 				}

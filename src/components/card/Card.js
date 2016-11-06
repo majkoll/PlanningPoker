@@ -14,11 +14,15 @@ class Card extends Component {
 		let typeOfCard = this.props.card,
 			active = (this.props.active) ? 'active' : '',
 			classes = classNames('Card', typeOfCard, active),
-			output = (typeOfCard === 'questionMark') ? '?' : typeOfCard
+			output = (typeOfCard === 'questionMark') ? '?' : typeOfCard,
+			player = <p className="playersCard">{this.props.player}</p>
 		return (
-			<li id={typeOfCard} className={classes} onClick={this.clickHandler}>
-				<p>{ output }</p>
-			</li>
+			<div>
+				<li id={typeOfCard} className={classes} onClick={this.clickHandler}>
+					<p>{ output }</p>
+				</li>
+				{player}
+			</div>
 		)
 	}
 }
@@ -28,7 +32,8 @@ export default Card
 Card.propTypes = {
 	onClick: React.PropTypes.func.isRequired,
 	card: React.PropTypes.string.isRequired,
-	active: React.PropTypes.bool
+	active: React.PropTypes.bool,
+	player: React.PropTypes.string
 	
 }
 
