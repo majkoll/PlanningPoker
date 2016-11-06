@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PlanningDeck from './components/PlanningDeck'
-
 import './cssReset.css'
 import './index.css'
 
