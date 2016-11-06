@@ -1,9 +1,16 @@
 .WaitingPhase {
-	width: 100%;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	height: auto;
 	background: #2d2d2d;
 	color: #eaeaea;
-	height: 25em;
 	background: #2e3b3e url(../grunge-background.png) 0 0 repeat;
+}
+
+@media only screen and (min-width: 736px) {
+	.WaitingPhase {
+		width: 100%;
+	}	
 }
 
 .WaitingPhase header {
@@ -15,10 +22,18 @@
 .WaitingPhase .players {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	justify-content: center;
 }
 
 .WaitingPhase .players .player {
-	margin: 0 2em;
-	text-align: center;
+	margin: 2em;
 }
+
+@media only screen and (min-width: 736px) {
+	.WaitingPhase .players .player {
+		margin: 0 2em;
+		text-align: center;
+	}	
+}
+
