@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Card from './card/Card'
+import WaitingPhase from './waiting/WaitingPhase'
 
 import './PlanningPokerApplication.css'
 
@@ -11,6 +12,19 @@ class PlanningPokerApplication extends Component {
 		this.setState({
 			selectedCard: value
 		})
+		setTimeout(() => {
+			if (this.state.selectedCard) {
+				this.setState({
+					phase: this.state.phases.waiting_phase
+				})
+			}
+		}, 500)
+	}
+
+	reSelectCard = () => {
+		this.setState({
+			phase: 'select'
+		})
 	}
 	
 	render() {
@@ -21,7 +35,6 @@ class PlanningPokerApplication extends Component {
 		if (this.state.phase === 'select') {
 			return (
 				<div className="PlanningPokerApplication">
-					<h1>Selection phase</h1>
 					<article className="userStory">
 						<header>
 							<h3>Create a planning poker app</h3>
@@ -37,6 +50,11 @@ class PlanningPokerApplication extends Component {
 					</ul>
 				</div>
 			)	
+		}
+		if (this.state.phase === 'waiting') {
+			return (
+				<WaitingPhase onClick={this.reSelectCard} />
+			)
 		}
 	}
 }
