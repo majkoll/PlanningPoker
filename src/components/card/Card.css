@@ -1,13 +1,16 @@
 .Card {
 	width: 7em;
 	height: 12em;
-	background: #24a2b5;
+	/*background: #24a2b5;*/
+    background-image: linear-gradient( rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.28) 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 100%), url('./card-texture.png'), linear-gradient( #14e7f5, #02679d);
 	margin: .8em;
 	border-radius: 4px;
 	padding: .4em;
 	box-sizing: border-box;
 	position: relative;
-	box-shadow: 0 1px 2px rgba(0, 0, 0, .15)
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
+	color: #f5f3f0;
+	text-align: center;
 }
 
 .Card.active {
@@ -34,10 +37,23 @@
 	cursor: pointer;
 }
 
-.Card.coffee {
+.Card p {
+	padding-top: 16%;
+	font-size: 2.2em;
+	opacity: .9;
+}
+/*
+.Card.coffee p {
 	background-image: url(./coffee.png);
 	background-size: 70%, contain;
-	background-position: 50%;
+	background-position: 0 50%;
 	background-repeat: no-repeat;
 }
+*/
 
+.Card img {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	max-width: 100%;
+}

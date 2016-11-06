@@ -81,54 +81,56 @@ class PlanningPokerApplication extends Component {
 		
 		// Set up the users cards for the select phase
 		let cards = this.props.deck.cards.map((card, index) => {
-			let active = (card.toString() === this.state.selectedCard ? true : false)
+			let active = (card === this.state.selectedCard ? true : false)
 			return <Card card={card} key={index} onClick={this.cardSelection} active={active} />
 		})
 
-		// Render this if pahse is select
-		if (this.state.phase === 'select') {
-			return (
-				<div className="PlanningPokerApplication">
-					<article className="userStory">
-						<header>
-							<h3>Create a planning poker app</h3>
-						</header>
-						<div>	
-							To better plan our resources, we need a fun and smooth way to estimate time and effort for our different cases in the backlog. Therefore, we need 
-							to develop a planning poker application. 
-						</div>
-					</article>
-					<h2>What is your estimate?</h2>
-					<ul className="cards">
-						{cards}
-					</ul>
-				</div>
-			)	
+		if (!this.state.phase) {
+			return false
 		}
-		// Render this if pahse is waiting
-		if (this.state.phase === 'waiting') {
-			/*
-			* Setting up some props for my waiting phase component: 
-			*  - the card deck
-			*  - teamMembers that will play
-			* Also setting the funtion updatePlayerSate as a props that let's me communicate between the waiting phase component 
-			* and this component. This let's me handle all state changes in this component. 
-			*/
-			return (
-				<div>
-					<WaitingPhase deck={this.props.deck} players={this.state.teamMembers} updatePlayerState={this.updateSelectedCardForTeamMembers} />
-					{this.state.teamMembersReady && (
-					<button onClick={this.goToRevealPhase}>Reveal all cards!</button>
-					)}
-				</div>
-			)
-		}
-		if (this.state.phase === 'reveal') {
-			console.log(this.state.selectedCard)
-			return (
-				<RevealPhase userCard={this.state.selectedCard} team={this.state.teamMembers} restart={this.restartApplication} />
-			)
-		}
+
+		return (
+			<div className="PlanningPokerApplication">
+				<header className="ppa-header">
+					<h1>Planning Poker Application</h1>
+					<p>Phase: {this.state.phase}</p>
+				</header>
+				{this.state.phase === 'select' && 
+					<div className="selectionPhase">
+						<article className="userStory">
+							<header><p>Backlog case #1</p></header>
+							<div className="case case-1">
+								<header>
+									<h3>Create a planning poker app</h3>
+								</header>
+								<div>	
+									To better plan our resources, we need a fun and smooth way to estimate time and effort for our different cases in the backlog. Therefore, we need 
+									to develop a planning poker application. 
+								</div>
+							</div>
+						</article>
+						<h4>What is your estimate?</h4>
+						<ul className="cards">
+							{cards}
+						</ul>
+					</div>
+				}
+				{this.state.phase === 'waiting' && 
+					<div>
+						<WaitingPhase deck={this.props.deck} players={this.state.teamMembers} updatePlayerState={this.updateSelectedCardForTeamMembers} />
+						{this.state.teamMembersReady && 
+							<button onClick={this.goToRevealPhase}>Reveal all cards!</button>
+						}
+					</div>	
+				}
+				
+				{this.state.phase === 'reveal' && 
+					<RevealPhase userCard={this.state.selectedCard} team={this.state.teamMembers} restart={this.restartApplication} />
+				}
+			</div>
+		)
+
+		
 	}
 }
 

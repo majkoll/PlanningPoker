@@ -52,7 +52,6 @@ class WaitingPhase extends Component {
 		})
 		return (
 			<div>
-				
 				<h1>Waiting for your team members</h1>
 				{players}
 			</div>

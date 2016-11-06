@@ -1,3 +1,28 @@
+.PlanningPokerApplication .ppa-header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	min-height: 50px;
+	background-color: rgb(222, 225, 226);
+	background-image: url(https://chas.se/assets/img/ui/textures/light-grunge-texture-.50.png);
+    box-shadow: 0 2px 24px rgba(0, 0, 28, 0.6);
+    z-index: 9999;
+    padding: .8em;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #24a2b5
+}
+
+.PlanningPokerApplication > div {
+	margin-top: 70px;
+}
+
+.PlanningPokerApplication .selectionPhase {
+	margin-top: 50px;
+}
+
 .PlanningPokerApplication .cards {
 	list-style: none;
 	margin: 0;
@@ -5,5 +30,41 @@
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: flex-start;
+	justify-content: center;
 }
+
+.PlanningPokerApplication .userStory {
+	width: 100%;
+	background: #2d2d2d;
+	color: #eaeaea;
+	height: 15em;
+	display: flex;
+	justify-content: center;
+	background: #2e3b3e url(./grunge-background.png) 0 0 repeat;
+}
+
+.PlanningPokerApplication .userStory > header {
+	margin: .8em 0 0 .8em;
+}
+
+.PlanningPokerApplication .userStory .case {
+	margin: 4% auto 0 auto;
+	padding: 0 10em;
+	max-width: 36em;
+	text-align: center;
+}
+
+.PlanningPokerApplication .userStory .case h3 {
+	text-transform: uppercase;
+}
+
+.PlanningPokerApplication .selectionPhase h4 {
+	text-align: center;
+	text-transform: uppercase;
+	margin-top: 4em;
+}
+
+
+
+
+
