@@ -23,7 +23,7 @@ class Card extends Component {
 export default Card
 
 Card.propTypes = {
-	onClick: PropTypes.func.isRequired,
+	onClick: PropTypes.func,
 	card: PropTypes.oneOfType([
 		PropTypes.string,
 		PropTypes.number

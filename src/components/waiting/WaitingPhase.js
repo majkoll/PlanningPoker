@@ -20,7 +20,7 @@ class WaitingPhase extends Component {
 	* This function let's each team member select a card from the deck.
 	*/
 	playersSelectCard = ( index ) => {
-		let cards = this.props.deck.cards.toString(), // set all card values to string
+		let cards = this.props.deck.cards, // set all card values to string
 			value = cards[Math.round(Math.random() * (12 - 0) + 0)], // randomise a card that the team members select
 			teamMembers	= this.props.players // current team members are saved
 

@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
+import update from 'react-addons-update'
+
 import Card from './card/Card'
 import WaitingPhase from './waiting/WaitingPhase'
+import RevealPhase from './reveal/Reveal'
 
 import './PlanningPokerApplication.css'
 
@@ -52,7 +55,28 @@ class PlanningPokerApplication extends Component {
 			})
 		}
 	}
+
+	goToRevealPhase = () => {
+		this.setState({
+			phase: this.state.phases.reveal_phase
+		})
+	}
 	
+	restartApplication = () => {
+		this.state.teamMembers.forEach((t, index) => {
+			let teamMembers = this.state.teamMembers
+			teamMembers[index] = update(teamMembers[index], {selectedCard: {$set: null}})
+			this.setState({
+				teamMembers
+			})
+		})
+		this.setState({
+			selectedCard: null,
+			teamMembersReady: false,
+			phase: 'select'
+		})
+	}
+
 	render() {
 		
 		// Set up the users cards for the select phase
@@ -94,9 +118,15 @@ class PlanningPokerApplication extends Component {
 				<div>
 					<WaitingPhase deck={this.props.deck} players={this.state.teamMembers} updatePlayerState={this.updateSelectedCardForTeamMembers} />
 					{this.state.teamMembersReady && (
-					<button>Reveal all cards!</button>
+					<button onClick={this.goToRevealPhase}>Reveal all cards!</button>
 					)}
 				</div>
+			)
+		}
+		if (this.state.phase === 'reveal') {
+			console.log(this.state.selectedCard)
+			return (
+				<RevealPhase userCard={this.state.selectedCard} team={this.state.teamMembers} restart={this.restartApplication} />
 			)
 		}
 	}
